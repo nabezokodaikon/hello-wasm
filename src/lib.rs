@@ -9,5 +9,8 @@ extern "C" {
 
 #[wasm_bindgen]
 pub fn greet(name: &str) {
-    alert(&format!("Hello, {}!", name));
+    #[allow(unused_unsafe)]
+    unsafe {
+        alert(&format!("Hello, {}!", name));
+    }
 }
